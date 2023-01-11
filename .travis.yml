@@ -5,6 +5,7 @@ rvm:
   - 2.4
   - 2.5
   - 2.6
+  - 2.7
 
 install:
   - "gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true"
@@ -40,6 +41,12 @@ matrix:
       env: RAILS_VERSION=4.0.0
     - rvm: 2.6
       env: RAILS_VERSION=4.1.0
+    - rvm: 2.7
+      env: RAILS_VERSION=4.0.0
+    - rvm: 2.7
+      env: RAILS_VERSION=4.1.0
+    - rvm: 2.7
+      env: RAILS_VERSION=4.2.0
 
 script: "bundle exec rake spec"
 
